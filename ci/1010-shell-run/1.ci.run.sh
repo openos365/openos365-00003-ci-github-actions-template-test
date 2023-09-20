@@ -19,5 +19,11 @@ echo "==========================================================================
 # TODO HERE
 gh repo list openos365 -L 100 |  awk '{ print $1 }' | sort > gh.repo.list.openos365.txt
 
+while read repo
+do
+    echo $repo
+
+done < gh.repo.list.openos365.txt
+
 
 echo "============================================================================"
