@@ -17,7 +17,7 @@ env
 
 echo "============================================================================"
 # TODO HERE
-gh repo list openos365 -L 100 |  awk '{ print $1 }' > gh.repo.list.openos365.txt
+gh repo list openos365 -L 100 |  awk '{ print $1 }' | sort > gh.repo.list.openos365.txt
 
 
 echo "============================================================================"
