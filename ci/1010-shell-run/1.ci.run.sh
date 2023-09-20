@@ -19,10 +19,15 @@ echo "==========================================================================
 # TODO HERE
 gh repo list openos365 -L 100 |  awk '{ print $1 }' | sort > gh.repo.list.openos365.txt
 
+mkdir -p ~/git/openos365/
 while read repo
 do
     echo $repo
-
+    gh repo clone $repo ~/git/$repo
+    cd ~/git/$repo
+    git branch -M main
+    
+    cd $CMD_PATH
 done < gh.repo.list.openos365.txt
 
 
