@@ -16,13 +16,7 @@ echo "==========================================================================
 env
 
 echo "============================================================================"
-
-for ci_dir in `ls -d ci/ci-*`
-do
-    echo $ci_dir
-    if [ -f $ci_dir/1.ci.run.sh ];then
-        ./ci_dir/1.ci.run.sh
-    fi
-done
+# TODO HERE
+docker run -i -v $PWD:/code openeuler/openeuler:latest /code/4.docker.installer.sh
 
 echo "============================================================================"
