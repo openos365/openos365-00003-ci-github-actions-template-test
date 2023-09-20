@@ -17,6 +17,6 @@ env
 
 echo "============================================================================"
 # TODO HERE
-docker run -i -v $PWD:/code openeuler/openeuler:latest /code/4.docker.installer.sh
+
 
 echo "============================================================================"
