@@ -34,7 +34,7 @@ ssh-keyscan "github.com" >> $HOME/.ssh/known_hosts
 cat $HOME/.ssh/known_hosts
 
 # 4
-./99.00002.openos365.template.install.sh
+./6.template.update.sh
 
 # 5
 cd $CMD_PATH
@@ -44,7 +44,7 @@ git push origin HEAD
 
 # 6
 cd $CMD_PATH
-for ci_dir in `ls -d ci/*`
+for ci_dir in `ls -d -1 ci/1*`
 do
     echo $ci_dir
     if [ -f $ci_dir/1.ci.run.sh ];then
