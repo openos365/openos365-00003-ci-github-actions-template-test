@@ -12,9 +12,9 @@ openos365/openos365-10007-centos-7-docker
 openos365/openos365-10008-centos-8-docker
 openos365/openos365-10009-centos-stream-docker
 openos365/openos365-10010-rockylinux-8-docker
-openos365/openos365-10011-rockylinux-9-docker-
-openos365/openos365-10012-almalinux-8-docker-
-openos365/openos365-10013-almalinux-9-docker-
+openos365/openos365-10011-rockylinux-9-docker
+openos365/openos365-10012-almalinux-8-docker
+openos365/openos365-10013-almalinux-9-docker
 openos365/openos365-10014-opensuse-tumbleweed-docker
 openos365/openos365-10015-opensuse-leap-15-6-docker
 openos365/openos365-10016-opensuse-leap-15-5-docker
@@ -24,7 +24,7 @@ openos365/openos365-10019-opensuse-leap-15-2-docker
 openos365/openos365-10020-opencloudos-8-docker
 openos365/openos365-10021-opencloudos-9-docker
 openos365/openos365-10022-debian-10-docker
-openos365/openos365-10023-debian-11-docker-
+openos365/openos365-10023-debian-11-docker
 openos365/openos365-10024-debian-12-docker
 openos365/openos365-10025-debian-sid-docker
 openos365/openos365-10026-ubuntu-20-04-lts-docker
