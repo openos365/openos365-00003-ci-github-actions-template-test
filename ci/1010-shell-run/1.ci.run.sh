@@ -26,8 +26,9 @@ do
     gh repo clone $repo ~/git/$repo
     cd ~/git/$repo
     git branch -M main
-    6.template.update.from.00002.sh 1
-    p2 "update template from 0002"
+    git remote -v
+    # 6.template.update.from.00002.sh 1
+    # p2 "update template from 0002"
     
     cd $CMD_PATH
 done < gh.repo.list.openos365.txt
