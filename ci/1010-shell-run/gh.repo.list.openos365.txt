@@ -53,3 +53,4 @@ openos365/openos365-10047-artixlinux-runit-docker
 openos365/openos365-10048-artixlinux-s6-docker
 openos365/openos365-20001-vultr-ubuntu-22-04-lts-server
 openos365/openos365-20002-deepin-v20-server
+openos365/openos365-20003-tengxunyun-ubuntu-22-04-server
