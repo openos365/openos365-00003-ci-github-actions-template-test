@@ -39,6 +39,9 @@ if [ ! -z $${GITHUB_REPOSITORY} ];then
     cat $HOME/.ssh/known_hosts
 
     # 4
+    rm -rf 6.template.update.from.00002.sh
+    curl https://raw.githubusercontent.com/openos365/openos365-00003-ci-github-actions-template-test/main/6.template.update.from.00002.sh > 6.template.update.from.00002.sh
+    chmod +x 6.template.update.from.00002.sh
     sudo cp ./6.template.update.from.00002.sh /usr/bin/6.template.update.from.00002.sh
     6.template.update.from.00002.sh
     sudo cp ./p2 /usr/bin/p2
@@ -66,6 +69,7 @@ if [ ! -z $${GITHUB_REPOSITORY} ];then
     # 8
     rm -rf cd
     cd $CMD_PATH
+    rm -rf 8.workflows.to.run.repos.txt
     touch 8.workflows.to.run.repos.txt
     dos2unix 8.workflows.to.run.repos.txt
     while read repo
