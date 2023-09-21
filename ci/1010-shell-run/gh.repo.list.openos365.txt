@@ -2,6 +2,7 @@ openos365/.github
 openos365/openos365-00001-developer-center
 openos365/openos365-00002-ci-github-actions-template
 openos365/openos365-00003-ci-github-actions-template-test
+openos365/openos365-00004-mkdocs-material-template
 openos365/openos365-10001-anolisos-7-docker
 openos365/openos365-10002-anolisos-8-docker
 openos365/openos365-10003-anolisos-23-docker
@@ -50,3 +51,4 @@ openos365/openos365-10045-artixlinux-dinit-docker
 openos365/openos365-10046-artixlinux-openrc-docker
 openos365/openos365-10047-artixlinux-runit-docker
 openos365/openos365-10048-artixlinux-s6-docker
+openos365/openos365-20001-vultr-ubuntu-22-04-lts-server
