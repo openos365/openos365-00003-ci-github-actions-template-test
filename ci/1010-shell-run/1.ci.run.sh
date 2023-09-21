@@ -27,6 +27,8 @@ do
     cd ~/git/$repo
     git branch -M main
     git remote -v
+    git remote set-url origin git@github.com:${repo}.git
+    git remote -v
     # 6.template.update.from.00002.sh 1
     # p2 "update template from 0002"
     
