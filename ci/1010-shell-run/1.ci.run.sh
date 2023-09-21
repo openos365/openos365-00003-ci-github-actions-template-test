@@ -23,12 +23,12 @@ mkdir -p ~/git/openos365/
 while read repo
 do
     echo $repo
-    gh repo clone $repo ~/git/$repo
+    git clone --depth=1 git@github.com:${repo}.git ~/git/$repo
     cd ~/git/$repo
     git branch -M main
     git remote -v
-    git remote set-url origin git@github.com:${repo}.git
-    git remote -v
+    # git remote set-url origin git@github.com:${repo}.git
+    # git remote -v
     # 6.template.update.from.00002.sh 1
     # p2 "update template from 0002"
     
