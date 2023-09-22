@@ -28,7 +28,15 @@ do
     git branch -M main
     git remote -v
     6.template.update.from.00002.sh 1
+
+    # setup secret for repo, then the ci of the private repo works
+    gh secret set OPENOS365_SSH --body "$OPENOS365_SSH"
+    gh secret set OPENOS365_DOCKERHUB_USER --body "$OPENOS365_DOCKERHUB_USER"
+    gh secret set OPENOS365_DOCKERHUB_PASSWORD --body "$OPENOS365_DOCKERHUB_PASSWORD"
+    gh secret set OPENOS365_GITHUB_TOKEN --body "$OPENOS365_GITHUB_TOKEN"
+    
     p2 "update template from 0002"
+    
     
     cd $CMD_PATH
 done < gh.repo.list.openos365.txt
