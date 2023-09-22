@@ -6,16 +6,6 @@ export PROJECT_NAME="${CMD_PATH##*/}"
 echo $PROJECT_NAME
 cd $CMD_PATH
 
-echo "============================================================================"
-pwd
-
-echo "============================================================================"
-whoami
-
-echo "============================================================================"
-env
-
-echo "============================================================================"
 # TODO HERE
 gh repo list openos365 -L 100 |  awk '{ print $1 }' | sort > gh.repo.list.openos365.txt
 
@@ -34,9 +24,10 @@ do
     if [ $? -eq 0 ];then
         echo $repo
         # todo 1 cp tpl
-
+        cp -fv $CMD_PATH/2.README.docker.tpl ./README.md
         # todo sed
-        
+        export name=$(echo $repo | cut -d "/" -f 1)
+        echo $name
     fi
 
     # setup secret for repo, then the ci of the private repo works
