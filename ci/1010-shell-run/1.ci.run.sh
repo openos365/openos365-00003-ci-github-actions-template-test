@@ -26,8 +26,9 @@ do
         # todo 1 cp tpl
         cp -fv $CMD_PATH/2.README.docker.tpl ./README.md
         # todo sed
-        export name=$(echo $repo | cut -d "/" -f 1)
+        export name=$(echo $repo | cut -d "/" -f 2)
         echo $name
+        sed -i "s/openos365-10001-anolisos-7-docker/$name/g" README.md
     fi
 
     # setup secret for repo, then the ci of the private repo works
