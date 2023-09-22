@@ -29,6 +29,16 @@ do
     git remote -v
     6.template.update.from.00002.sh 1
 
+    # set up README.md from tpl
+    echo "${repo}" | grep "openos365-1"
+    if [ $? -eq 0 ];then
+        echo $repo
+        # todo 1 cp tpl
+
+        # todo sed
+        
+    fi
+
     # setup secret for repo, then the ci of the private repo works
     gh secret set OPENOS365_SSH --body "$OPENOS365_SSH"
     gh secret set OPENOS365_DOCKERHUB_USER --body "$OPENOS365_DOCKERHUB_USER"
