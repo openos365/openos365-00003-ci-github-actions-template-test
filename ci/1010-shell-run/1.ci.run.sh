@@ -7,6 +7,46 @@ echo $PROJECT_NAME
 cd $CMD_PATH
 
 # TODO HERE
+
+
+#
+# Pushes README.md content to Docker Hub.
+#
+# $1 - The image name.
+# $2 - The JWT.
+#
+# Examples:
+#
+#   push_readme "foo/bar" "token"
+#
+push_readme() {
+  declare -r image="${1}"
+  declare -r token="${2}"
+
+  local code=$(jq -n --arg msg "$(<README.md)" \
+    '{"registry":"registry-1.docker.io","full_description": $msg }' | \
+        curl -s -o /dev/null  -L -w "%{http_code}" \
+           https://cloud.docker.com/v2/repositories/"${image}"/ \
+           -d @- -X PATCH \
+           -H "Content-Type: application/json" \
+           -H "Authorization: JWT ${token}")
+
+  if [[ "${code}" = "200" ]]; then
+    printf "Successfully pushed README to Docker Hub"
+  else
+    printf "Unable to push README to Docker Hub, response code: %s\n" "${code}"
+    exit 1
+  fi
+}
+
+
+local token=$(curl -s -X POST \
+    -H "Content-Type: application/json" \
+    -d '{"username": "'"$OPENOS365_DOCKERHUB_USER"'", "password": "'"$OPENOS365_DOCKERHUB_PASSWORD"'"}' \
+    https://hub.docker.com/v2/users/login/ | jq -r .token)
+
+
+
 gh repo list openos365 -L 100 |  awk '{ print $1 }' | sort > gh.repo.list.openos365.txt
 
 mkdir -p ~/git/openos365/
@@ -29,6 +69,7 @@ do
         export name=$(echo $repo | cut -d "/" -f 2)
         echo $name
         sed -i "s/openos365-10001-anolisos-7-docker/$name/g" README.md
+        push_readme "${$repo}" "${token}"
     fi
 
     # setup secret for repo, then the ci of the private repo works
