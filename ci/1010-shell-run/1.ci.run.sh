@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -x
+set +x
 export CMD_PATH=$(cd `dirname $0`; pwd)
 export PROJECT_NAME="${CMD_PATH##*/}"
 echo $PROJECT_NAME
@@ -39,8 +39,7 @@ push_readme() {
   fi
 }
 
-
-local token=$(curl -s -X POST \
+export token=$(curl -s -X POST \
     -H "Content-Type: application/json" \
     -d '{"username": "'"$OPENOS365_DOCKERHUB_USER"'", "password": "'"$OPENOS365_DOCKERHUB_PASSWORD"'"}' \
     https://hub.docker.com/v2/users/login/ | jq -r .token)
