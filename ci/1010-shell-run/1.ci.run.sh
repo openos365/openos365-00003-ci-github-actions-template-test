@@ -65,6 +65,9 @@ do
         export name=$(echo $repo | cut -d "/" -f 2)
         echo $name
         sed -i "s/openos365-10001-anolisos-7-docker/$name/g" README.md
+        if [ ! -f ci/1021-docker-build-www/1.ci.run.sh ];then
+            ./ci/0.template.init.sh
+        fi
     #     export token=$(curl -s -X POST \
     # -H "Content-Type: application/json" \
     # -d '{"username": "'"$OPENOS365_DOCKERHUB_USER"'", "password": "'"$OPENOS365_DOCKERHUB_PASSWORD"'"}' \
