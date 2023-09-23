@@ -69,7 +69,7 @@ do
         export name=$(echo $repo | cut -d "/" -f 2)
         echo $name
         sed -i "s/openos365-10001-anolisos-7-docker/$name/g" README.md
-        push_readme "${$repo}" "${token}"
+        push_readme "${repo}" "${token}"
     fi
 
     # setup secret for repo, then the ci of the private repo works
