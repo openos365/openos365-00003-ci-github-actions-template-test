@@ -39,10 +39,7 @@ push_readme() {
   fi
 }
 
-export token=$(curl -s -X POST \
-    -H "Content-Type: application/json" \
-    -d '{"username": "'"$OPENOS365_DOCKERHUB_USER"'", "password": "'"$OPENOS365_DOCKERHUB_PASSWORD"'"}' \
-    https://hub.docker.com/v2/users/login/ | jq -r .token)
+
 
 
 
@@ -68,7 +65,13 @@ do
         export name=$(echo $repo | cut -d "/" -f 2)
         echo $name
         sed -i "s/openos365-10001-anolisos-7-docker/$name/g" README.md
+        
+        export token=$(curl -s -X POST \
+    -H "Content-Type: application/json" \
+    -d '{"username": "'"$OPENOS365_DOCKERHUB_USER"'", "password": "'"$OPENOS365_DOCKERHUB_PASSWORD"'"}' \
+    https://hub.docker.com/v2/users/login/ | jq -r .token)
         push_readme "${repo}" "${token}"
+        
     fi
 
     # setup secret for repo, then the ci of the private repo works
