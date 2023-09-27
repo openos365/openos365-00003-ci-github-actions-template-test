@@ -76,6 +76,21 @@ do
         
     fi
 
+     # set up README.md from tpl
+    echo "${repo}" | grep "openos365-3"
+    if [ $? -eq 0 ];then
+        echo $repo
+        # todo 1 cp tpl
+        cp -fv $CMD_PATH/2.README.docker.tpl ./README.md
+        # todo sed
+        export name=$(echo $repo | cut -d "/" -f 2)
+        echo $name
+        sed -i "s/openos365-10001-anolisos-7-docker/$name/g" README.md
+        if [ ! -f ci/1021-docker-build-www/1.ci.run.sh ];then
+            ./ci/0.template.init.sh
+        fi
+    fi
+
     # setup secret for repo, then the ci of the private repo works
     gh secret set OPENOS365_SSH --body "$OPENOS365_SSH"
     gh secret set OPENOS365_DOCKERHUB_USER --body "$OPENOS365_DOCKERHUB_USER"
