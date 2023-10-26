@@ -60,6 +60,5 @@ openos365/openos365-20003-tengxunyun-ubuntu-22-04-server
 openos365/openos365-20004-deepin-v23-server
 openos365/openos365-30001-nodejs-runtime
 openos365/openos365-40001-npm-packages-sync
-openos365/openos365-40002-adminos-ci
 openos365/openos365-40003-adminos-docker
 openos365/openos365-40004-adminos-docker-compose
