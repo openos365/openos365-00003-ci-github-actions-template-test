@@ -9,5 +9,15 @@ cd $CMD_PATH
 if [ ! -f ~/env.sh ];then
     cp -fv env.sh ~/env.sh
 fi
-docker-compose pull
-docker-compose up -d
+which docker-compose
+
+if [ $? -eq 0 ];then
+    # docker-compose down -v --remove-orphans
+    docker-compose pull
+    docker-compose up -d --remove-orphans
+else
+    # docker compose down -v --remove-orphans
+    docker compose pull
+    docker compose up -d --remove-orphans
+fi
+
