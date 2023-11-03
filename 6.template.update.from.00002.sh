@@ -10,6 +10,7 @@ cd ~
 if [ ! -d openos365-00002-ci-github-actions-template ];then
     git clone --depth=1 https://github.com/openos365/openos365-00002-ci-github-actions-template.git
 fi
+
 if [ -d openos365-00002-ci-github-actions-template ];then
     cd openos365-00002-ci-github-actions-template
     if [ -z $1 ];then
