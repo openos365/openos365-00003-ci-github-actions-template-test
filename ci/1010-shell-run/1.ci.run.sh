@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set +x
+set -x
 export CMD_PATH=$(cd `dirname $0`; pwd)
 export PROJECT_NAME="${CMD_PATH##*/}"
 echo $PROJECT_NAME
